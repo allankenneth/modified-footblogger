@@ -37,3 +37,12 @@ function my_login_stylesheet() {
 //    wp_enqueue_script( 'custom-login', get_stylesheet_directory_uri() . '/style-login.js' );
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+function xyz_filter_wp_mail_from_name($from_name){
+return "Footblogger";
+}
+add_filter("wp_mail_from_name", "xyz_filter_wp_mail_from_name");
+function xyz_filter_wp_mail_from($email){
+return "noreply@modified.in";
+}
+add_filter("wp_mail_from", "xyz_filter_wp_mail_from");
